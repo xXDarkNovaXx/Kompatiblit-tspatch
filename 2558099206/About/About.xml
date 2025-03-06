@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Glitter Tech</name>
+    <author>Xavior</author>
+    <supportedVersions>
+        <li>1.0</li>
+        <li>1.1</li>
+        <li>1.2</li>
+        <li>1.3</li>
+        <li>1.4</li>
+        <li>1.5</li>
+    </supportedVersions>
+    <modDependencies>
+        <li>
+            <packageId>brrainz.harmony</packageId>
+            <displayName>Harmony</displayName>
+            <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+            <downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+        </li>
+    </modDependencies>
+    <packageId>Xavior.GlitterTech</packageId>
+    <description>
+        GlitterTech adds a ton of shiny new and futuristic items found on the richer developed Glitter worlds. But, this expensive and illegal tech attracts attention of Glitter world Commandos.
+
+        (Unofficial Version for 1.5 and below)
+        *I am not the original author*
+        Original Mod: https://steamcommunity.com/sharedfiles/filedetails/?id=725576127
+        Pulled and updated from: 725576127 mod folder
+        Original Git Repo: https://github.com/sam23694/GlitterTech/tree/1.0.2059
+        Current Mod Repo: https://github.com/mdrain18/XaviorsGlitterTech.git
+
+        Updating Mod:
+        
+        It can be said this mod is OP. I think it should be, however, in the spirit of being able to play how you want to I am adding a few changes to this mod.
+
+        Currently: Working on getting this CE compatible but I need help with testing to see what needs to be patched
+        1) Add some Anomaly specific items... ideas are welcome :)
+        2) Glitter tech incidents and quests
+            - Archotech quest: three abandon glitter tech outposts which have consoles that need to be decrypted. Each gives you 1/3 of the location, collect all three and you will get the location of the archotech factory, which is hidden deep into a side of a mountain. Once there, there will be several boxes with archotech prosthetics, psylinks (if you have the DLC), Archite capsules (if you have the DLC),  
+        3) Glitter Tech Weapons and Armor Expanded
+        4) Craft Glitter Tech Weapons and Armor Expanded:
+            - I'm thinking of adding special items which can only be found via quests
+        5) More..... STUFF! Starting with Glitter swords and Glitter psycasts... I think. Not sure if I will ever get
+        here but I'm being optimistic
+
+        Let me know in the "Changes" discussion what you want done with this mod and I will do my best to make it
+        happen. Link below:
+        https://steamcommunity.com/workshop/filedetails/discussion/2558099206/3480742287613877229/
+
+        Release Notes: 1.5.40602
+        - Updated to work with release
+        - Added Resource Slider - this will change the stat values of the three resources of this mod based on what the slider is set to
+        - Added Titanium yield setting slider
+        - Added three army incident where Commandos and OC's fight the Empire!
+            (includes settings for changing various parts of the incident)
+
+        
+        Release Notes: 1.4.04
+        - Titanium is now Titanium_GT which should fix problems with other metal mods that have titanium in them
+        - Updated to 1.4: Except:
+        - Tanks: big problems here which I am tabling for now
+        not sure why this isn't working
+        - Tanks have been completely removed and should not spawn so the error shouldn't happen
+    </description>
+</ModMetaData>
