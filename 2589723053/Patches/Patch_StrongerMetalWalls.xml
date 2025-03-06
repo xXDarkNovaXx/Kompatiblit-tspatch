@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <!-- If you want to change the health, just know that  <MaxHitPoints>1</MaxHitPoints> equals 300 hp.
+       You can calculate your desired number with x*(100/30000). X will be your desired hp for given metal.
+       Example: 225*(100/30000) = 0.75. <MaxHitPoints>0.75</MaxHitPoints> would give your wall 225 hp.
+   -->
+   
+   <Operation Class="XmlExtensions.OptionalPatch">
+		<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+		<key>strongerwallstoggle</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+		<defaultValue>true</defaultValue> <!--What you want the default value of the setting to be-->
+		<caseTrue>
+		
+			<!--************************************************************ SETTINGS CALCULATIONS FOR VANILLA MATERIALS ************************************************************-->
+			
+			<!--************************************************************ STEEL ************************************************************-->
+			<!-- Stronger Steel Material Health -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>steelHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>600</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{steelHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>steelHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{steelHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Steel"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{steelHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Steel Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>steelFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{steelFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>steelFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Steel"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{steelFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Steel"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{steelFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ SILVER ************************************************************-->
+			<!-- Stronger Silver Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>silverHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>315</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{silverHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>silverHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Silver"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{silverHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{silverHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Silver Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>silverFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{silverFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>silverFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Silver"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{silverFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Silver"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{silverFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ GOLD ************************************************************-->
+			<!-- Stronger Gold Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>goldHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>270</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{goldHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>goldHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Gold"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Gold"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{goldHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Gold"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{goldHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Gold Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>goldFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{goldFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>goldFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Gold"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Gold"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{goldFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Gold"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{goldFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ URANIUM ************************************************************-->
+			<!-- Stronger Uranium Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>uraniumHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>825</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{uraniumHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>uraniumHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Uranium"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Uranium"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{uraniumHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Uranium"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{uraniumHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Uranium Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>uraniumFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{uraniumFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>uraniumFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Uranium"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Uranium"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{uraniumFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Uranium"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{uraniumFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ PLASTEEL ************************************************************-->
+			<!-- Stronger Plasteel Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>plasteelHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>1050</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{plasteelHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>plasteelHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Plasteel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Plasteel"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{plasteelHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Plasteel"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{plasteelHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Plasteel Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>plasteelFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{plasteelFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>plasteelFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Plasteel"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Plasteel"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{plasteelFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Plasteel"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{plasteelFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ JADE ************************************************************-->
+			<!-- Stronger Jade Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>jadeHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>1050</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{jadeHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>jadeHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Jade"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Jade"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{jadeHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Jade"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{jadeHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Jade Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>jadeFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{jadeFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>jadeFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="Jade"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="Jade"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{jadeFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="Jade"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{jadeFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--***************************************************************** EXTRA CALCULATIONS FOR VANILLA STONE ****************************************************************-->
+			
+			<!--************************************************************ GRANITE ************************************************************-->
+			<!-- Stronger Granite Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>graniteHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>510</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{graniteHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>graniteHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksGranite"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksGranite"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{graniteHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksGranite"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{graniteHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Granite Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>graniteFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{graniteFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>graniteFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksGranite"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksGranite"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{graniteFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksGranite"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{graniteFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ LIMESTONE ************************************************************-->
+			<!-- Stronger Limestone Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>limestoneHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>465</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{limestoneHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>limestoneHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksLimestone"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksLimestone"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{limestoneHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksLimestone"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{limestoneHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Granite Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>limestoneFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{limestoneFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>limestoneFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksLimestone"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksLimestone"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{limestoneFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksLimestone"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{limestoneFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ MARBLE ************************************************************-->
+			<!-- Stronger Limestone Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>marbleHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>360</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{marbleHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>marbleHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksMarble"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksMarble"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{marbleHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksMarble"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{marbleHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Granite Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>marbleFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{marbleFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>marbleFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksMarble"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksMarble"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{marbleFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksMarble"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{marbleFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ SANDSTONE ************************************************************-->
+			<!-- Stronger Limestone Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>sandstoneHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>420</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{sandstoneHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>sandstoneHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksSandstone"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksSandstone"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{sandstoneHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksSandstone"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{sandstoneHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Granite Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>sandstoneFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{sandstoneFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>sandstoneFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksSandstone"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksSandstone"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{sandstoneFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksSandstone"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{sandstoneFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ SLATE ************************************************************-->
+			<!-- Stronger Limestone Material -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>slateHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>390</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{slateHealthSetting}</value>
+						<value2>300</value2>
+						<operation>/</operation>
+						<storeIn>slateHealth</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksSlate"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksSlate"]/stuffProps/statFactors/MaxHitPoints</xpath>
+								   <value>
+										<MaxHitPoints>{slateHealth}</MaxHitPoints>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksSlate"]/stuffProps/statFactors</xpath>
+								   <value>
+										<MaxHitPoints>{slateHealth}</MaxHitPoints>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!-- Better Granite Material Flammability -->
+			<Operation Class="XmlExtensions.UseSetting">
+				<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+				<key>slateFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+				<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+				<apply>
+					<Operation Class="XmlExtensions.CreateVariable">
+						<value>{slateFlammabilitySetting}</value>
+						<value2>100</value2>
+						<operation>/</operation>
+						<storeIn>slateFlammability</storeIn>
+						<apply>
+							<li Class="PatchOperationConditional">
+								<xpath>Defs/ThingDef[defName="BlocksSlate"]/stuffProps/statFactors/Flammability</xpath>
+								<match Class="PatchOperationReplace">
+								   <xpath>Defs/ThingDef[defName="BlocksSlate"]/stuffProps/statFactors/Flammability</xpath>
+								   <value>
+										<Flammability>{slateFlammability}</Flammability>
+								   </value>
+								</match>
+								<nomatch Class="PatchOperationAdd">
+								   <xpath>Defs/ThingDef[defName="BlocksSlate"]/stuffProps/statFactors</xpath>
+								   <value>
+										<Flammability>{slateFlammability}</Flammability>
+								   </value>
+								</nomatch>
+							</li>
+						</apply>
+					</Operation>
+				</apply>
+			</Operation>
+			
+			<!--************************************************************ EXTRA CALCULATIONS FOR ANOMALY IF DLC IS FOUND ************************************************************-->
+			
+			<!-- ANOMALY - DLC. Stronger Chitin Material. Will try to find to Mod first -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Ludeon.RimWorld.Anomaly</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+						<key>bioferriteHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+						<defaultValue>600</defaultValue> <!--What you want the default value of the setting to be-->
+						<apply>
+							<Operation Class="XmlExtensions.CreateVariable">
+								<value>{bioferriteHealthSetting}</value>
+								<value2>300</value2>
+								<operation>/</operation>
+								<storeIn>bioferriteHealth</storeIn>
+								<apply>
+									<li Class="PatchOperationReplace">
+										<xpath>/Defs/ThingDef[defName="Bioferrite"]/stuffProps/statFactors/MaxHitPoints</xpath>
+										<value>
+											<MaxHitPoints>{bioferriteHealth}</MaxHitPoints>
+										</value>
+									</li>
+								</apply>
+							</Operation>
+						</apply>
+					</Operation>
+					
+					<!-- Better Chitin Material Flammability -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+						<key>bioferriteFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+						<defaultValue>75</defaultValue> <!--What you want the default value of the setting to be-->
+						<apply>
+							<Operation Class="XmlExtensions.CreateVariable">
+								<value>{bioferriteFlammabilitySetting}</value>
+								<value2>100</value2>
+								<operation>/</operation>
+								<storeIn>bioferriteFlammability</storeIn>
+								<apply>
+									<li Class="PatchOperationConditional">
+										<xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statFactors/Flammability</xpath>
+										<match Class="PatchOperationReplace">
+										   <xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statFactors/Flammability</xpath>
+										   <value>
+												<Flammability>{bioferriteFlammability}</Flammability>
+										   </value>
+										</match>
+										<nomatch Class="PatchOperationAdd">
+										   <xpath>Defs/ThingDef[defName="Bioferrite"]/stuffProps/statFactors</xpath>
+										   <value>
+												<Flammability>{bioferriteFlammability}</Flammability>
+										   </value>
+										</nomatch>
+									</li>
+								</apply>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+		
+			<!--************************************************************ EXTRA CALCULATIONS FOR MODS IF THEY ARE FOUND ************************************************************-->
+			
+			<!-- VANILLA FACTIONS EXPANDED - INSECTOID. Stronger Chitin Material. Will try to find to Mod first -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>OskarPotocki.VFE.Insectoid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+						<key>chitinHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+						<defaultValue>750</defaultValue> <!--What you want the default value of the setting to be-->
+						<apply>
+							<Operation Class="XmlExtensions.CreateVariable">
+								<value>{chitinHealthSetting}</value>
+								<value2>300</value2>
+								<operation>/</operation>
+								<storeIn>chitinHealth</storeIn>
+								<apply>
+									<li Class="PatchOperationReplace">
+										<xpath>/Defs/ThingDef[defName="VFEI_Chitin"]/stuffProps/statFactors/MaxHitPoints</xpath>
+										<value>
+											<MaxHitPoints>{chitinHealth}</MaxHitPoints>
+										</value>
+									</li>
+								</apply>
+							</Operation>
+						</apply>
+					</Operation>
+					
+					<!-- Better Chitin Material Flammability -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+						<key>chitinFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+						<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+						<apply>
+							<Operation Class="XmlExtensions.CreateVariable">
+								<value>{chitinFlammabilitySetting}</value>
+								<value2>100</value2>
+								<operation>/</operation>
+								<storeIn>chitinFlammability</storeIn>
+								<apply>
+									<li Class="PatchOperationConditional">
+										<xpath>Defs/ThingDef[defName="VFEI_Chitin"]/stuffProps/statFactors/Flammability</xpath>
+										<match Class="PatchOperationReplace">
+										   <xpath>Defs/ThingDef[defName="VFEI_Chitin"]/stuffProps/statFactors/Flammability</xpath>
+										   <value>
+												<Flammability>{chitinFlammability}</Flammability>
+										   </value>
+										</match>
+										<nomatch Class="PatchOperationAdd">
+										   <xpath>Defs/ThingDef[defName="VFEI_Chitin"]/stuffProps/statFactors</xpath>
+										   <value>
+												<Flammability>{chitinFlammability}</Flammability>
+										   </value>
+										</nomatch>
+									</li>
+								</apply>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			
+			<!-- VANILLA FACTIONS EXPANDED - CLASSICAL. Stronger Bronze Material. Will try to find to Mod first -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>OskarPotocki.VFE.Classical</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+						<key>bronzeHealthSetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+						<defaultValue>360</defaultValue> <!--What you want the default value of the setting to be-->
+						<apply>
+							<Operation Class="XmlExtensions.CreateVariable">
+								<value>{bronzeHealthSetting}</value>
+								<value2>300</value2>
+								<operation>/</operation>
+								<storeIn>bronzeHealth</storeIn>
+								<apply>
+									<li Class="PatchOperationReplace">
+										<xpath>/Defs/ThingDef[defName="VFEC_Bronze"]/stuffProps/statFactors/MaxHitPoints</xpath>
+										<value>
+											<MaxHitPoints>{bronzeHealth}</MaxHitPoints>
+										</value>
+									</li>
+								</apply>
+							</Operation>
+						</apply>
+					</Operation>
+					
+					<!-- Better Chitin Material Flammability -->
+					<Operation Class="XmlExtensions.UseSetting">
+						<modId>strongermetalwalls</modId> <!--String that XML Extensions can identify your mod with-->
+						<key>bronzeFlammabilitySetting</key> <!--Key to identify the setting (only used internally, invisible to user)-->
+						<defaultValue>0</defaultValue> <!--What you want the default value of the setting to be-->
+						<apply>
+							<Operation Class="XmlExtensions.CreateVariable">
+								<value>{bronzeFlammabilitySetting}</value>
+								<value2>100</value2>
+								<operation>/</operation>
+								<storeIn>bronzeFlammability</storeIn>
+								<apply>
+									<li Class="PatchOperationConditional">
+										<xpath>Defs/ThingDef[defName="VFEC_Bronze"]/stuffProps/statFactors/Flammability</xpath>
+										<match Class="PatchOperationReplace">
+										   <xpath>Defs/ThingDef[defName="VFEC_Bronze"]/stuffProps/statFactors/Flammability</xpath>
+										   <value>
+												<Flammability>{bronzeFlammability}</Flammability>
+										   </value>
+										</match>
+										<nomatch Class="PatchOperationAdd">
+										   <xpath>Defs/ThingDef[defName="VFEC_Bronze"]/stuffProps/statFactors</xpath>
+										   <value>
+												<Flammability>{bronzeFlammability}</Flammability>
+										   </value>
+										</nomatch>
+									</li>
+								</apply>
+							</Operation>
+						</apply>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			
+			<!--************************************************************ EXTRA SETTINGS IF DLC IS FOUND ************************************************************-->
+			
+			<!-- Add Vanilla Expanded Tab -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>Ludeon.RimWorld.Anomaly</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>or</logic>
+				<caseTrue>
+					
+					<Operation Class="PatchOperationReplace">
+						<xpath>/Defs/XmlExtensions.SettingsMenuDef[modId="strongermetalwalls"]/settings/li[@Class="XmlExtensions.Setting.TabView"]/tabs/li/settings/li/../li[last()-6]</xpath>
+						<value>
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Bioferrite</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 600	Mod's default health: 600</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>bioferriteHealthSetting</key>
+								<label>Bioferrite health: {bioferriteHealthSetting}</label>
+								<defaultValue>600</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 75%		Mod's default flammability: 75%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>bioferriteFlammabilitySetting</key>
+								<label>Bioferrite flammability: {bioferriteFlammabilitySetting}%</label>
+								<defaultValue>75</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.GapLine"/>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			
+			<!--************************************************************ EXTRA SETTINGS IF MODS ARE FOUND ************************************************************-->
+			
+			<!-- Add Vanilla Expanded Tab -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>OskarPotocki.VFE.Insectoid</li>
+					<li>OskarPotocki.VFE.Classical</li>
+				</mods>
+				<packageId>true</packageId>
+				<logic>or</logic>
+				<caseTrue>
+					
+					<Operation Class="PatchOperationInsert">
+						<xpath>/Defs/XmlExtensions.SettingsMenuDef[modId="strongermetalwalls"]/settings/li[@Class="XmlExtensions.Setting.TabView"]/tabs/li</xpath>
+						<order>Append</order>
+						<value>
+							<li>
+								<label>Vanilla Expanded</label>
+								<settings>
+									
+									<!-- Adds settings for Chitin Material if VFE.Insectoid is found -->
+									<li Class="XmlExtensions.Setting.Text">
+										<text>Vanilla Expanded</text>
+										<font>Medium</font>
+										<anchor>Middle</anchor>
+									</li>
+									
+									<li Class="XmlExtensions.Setting.SetColor">
+										<color>(255,255,0)</color>
+									</li>
+									
+									<li Class="XmlExtensions.Setting.Text">
+										<text>Restart is required for any changes to apply.</text>
+										<font>Small</font>
+										<anchor>Middle</anchor>
+										<tooltip>Sorry for any restarting inconveniences!</tooltip>
+									</li>
+									
+									<li Class="XmlExtensions.Setting.SetColor"/>
+									
+									<li Class="XmlExtensions.Setting.GapLine"/>
+									
+								</settings>
+							</li>
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			
+			<!-- Check if VANILLA FACTIONS EXPANDED INSECTOID mod is found -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>OskarPotocki.VFE.Insectoid</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationInsert">
+						<xpath>/Defs/XmlExtensions.SettingsMenuDef[modId="strongermetalwalls"]/settings/li[@Class="XmlExtensions.Setting.TabView"]/tabs/li/settings/li[text="Vanilla Expanded"]/../li[@Class="XmlExtensions.Setting.GapLine"]</xpath>
+						<order>Append</order>
+						<value>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>chitinFlammabilitySetting</key>
+								<label>Chitin flammability: {chitinFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla Expanded default flammability: 10%	Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>chitinHealthSetting</key>
+								<label>Chitin Health: {chitinHealthSetting}</label>
+								<defaultValue>750</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla Expanded default health: 600	Mod's default health: 750</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Chitin</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+			
+			<!-- Check if VANILLA FACTIONS EXPANDED CLASSICAL mod is found -->
+			<Operation Class="XmlExtensions.FindMod">
+				<mods>
+					<li>OskarPotocki.VFE.Classical</li>
+				</mods>
+				<packageId>true</packageId>
+				<caseTrue>
+					<Operation Class="PatchOperationInsert">
+						<xpath>/Defs/XmlExtensions.SettingsMenuDef[modId="strongermetalwalls"]/settings/li[@Class="XmlExtensions.Setting.TabView"]/tabs/li/settings/li[text="Vanilla Expanded"]/../li[@Class="XmlExtensions.Setting.GapLine"]</xpath>
+						<order>Append</order>
+						<value>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>bronzeFlammabilitySetting</key>
+								<label>Bronze flammability: {bronzeFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla Expanded default flammability: 40%	Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>bronzeHealthSetting</key>
+								<label>Bronze Health: {bronzeHealthSetting}</label>
+								<defaultValue>360</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla Expanded default health: 255	Mod's default health: 360</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Bronze</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+						</value>
+					</Operation>
+				</caseTrue>
+			</Operation>
+
+		</caseTrue>
+	</Operation>
+</Patch>

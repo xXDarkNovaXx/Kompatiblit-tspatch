@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	<XmlExtensions.SettingsMenuDef>
+		<defName>StrongerMetalWalls</defName> <!--Can be anything unique with no periods-->
+		<modId>strongermetalwalls</modId> <!--MUST be the same as the one entered earlier-->    
+		<label>Stronger Metal Walls</label> <!-- This is what displays as your mod's name-->   
+		<settings> <!--This is where you define what settings are in the settings menu-->
+			<li Class="XmlExtensions.Setting.TabView">
+				<tabs>
+					<li>
+						<label>Vanilla</label>
+						<settings>
+						
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Vanilla Metal Walls</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+								<tooltip>Hi!</tooltip>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.SetColor">
+								<color>(255,255,0)</color>
+							</li>
+							
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Restart is required for any changes to apply.</text>
+									<font>Small</font>
+									<anchor>Middle</anchor>
+									<tooltip>Sorry for any restarting inconveniences!</tooltip>
+								</li>
+								
+							<li Class="XmlExtensions.Setting.SetColor"/>
+							
+							<li Class="XmlExtensions.Setting.GapLine"/>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ STEEL ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Steel</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 300	Mod's default health: 600</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>steelHealthSetting</key>
+								<label>Steel health: {steelHealthSetting}</label>
+								<defaultValue>600</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<!-- FLAMMABILITY -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 40%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>steelFlammabilitySetting</key>
+								<label>Steel flammability: {steelFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ SILVER ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Silver</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 210	Mod's default health: 315</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>silverHealthSetting</key>
+								<label>Silver health: {silverHealthSetting}</label>
+								<defaultValue>315</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<!-- FLAMMABILITY -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 40%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>silverFlammabilitySetting</key>
+								<label>Silver flammability: {silverFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ GOLD ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Gold</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 180	Mod's default health: 270</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>goldHealthSetting</key>
+								<label>Gold health: {goldHealthSetting}</label>
+								<defaultValue>270</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<!-- FLAMMABILITY -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 40%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>goldFlammabilitySetting</key>
+								<label>Gold flammability: {goldFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ URANIUM ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Uranium</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 750	Mod's default health: 825</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>uraniumHealthSetting</key>
+								<label>Uranium health: {uraniumHealthSetting}</label>
+								<defaultValue>825</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>uraniumFlammabilitySetting</key>
+								<label>Uranium flammability: {uraniumFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ PLASTEEL ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Plasteel</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 840	Mod's default health: 1050</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>plasteelHealthSetting</key>
+								<label>Plasteel health: {plasteelHealthSetting}</label>
+								<defaultValue>1050</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>plasteelFlammabilitySetting</key>
+								<label>Plasteel flammability: {plasteelFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ JADE ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Jade</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 150	Mod's default health: 225</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>jadeHealthSetting</key>
+								<label>Jade health: {jadeHealthSetting}</label>
+								<defaultValue>225</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>jadeFlammabilitySetting</key>
+								<label>Jade flammability: {jadeFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ MODDED METAL WALLS ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Modded Metal</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+								<tooltip>Hi!</tooltip>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.GapLine"/>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ Titanium ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Steel</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Mod default health: 1050	Mod's default health: 600</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>steelHealthSetting</key>
+								<label>Steel health: {steelHealthSetting}</label>
+								<defaultValue>600</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<!-- FLAMMABILITY -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 40%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>steelFlammabilitySetting</key>
+								<label>Steel flammability: {steelFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ VANILLA STONES ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Vanilla Stone Walls</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+								<tooltip>Hi!</tooltip>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.GapLine"/>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ GRANITE ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Granite</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 510	Mod's default health: 510</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>graniteHealthSetting</key>
+								<label>Granite health: {graniteHealthSetting}</label>
+								<defaultValue>510</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>graniteFlammabilitySetting</key>
+								<label>Granite flammability: {graniteFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ LIMESTONE ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Limestone</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 465	Mod's default health: 465</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>limestoneHealthSetting</key>
+								<label>Limestone health: {limestoneHealthSetting}</label>
+								<defaultValue>465</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>limestoneFlammabilitySetting</key>
+								<label>Limestone flammability: {limestoneFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ MARBLE ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Marble</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 360	Mod's default health: 360</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>marbleHealthSetting</key>
+								<label>Marble health: {marbleHealthSetting}</label>
+								<defaultValue>360</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>marbleFlammabilitySetting</key>
+								<label>Marble flammability: {marbleFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ SANDSTONE ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Sandstone</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 420	Mod's default health: 420</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>sandstoneHealthSetting</key>
+								<label>Sandstone health: {sandstoneHealthSetting}</label>
+								<defaultValue>420</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>sandstoneFlammabilitySetting</key>
+								<label>Sandstone flammability: {sandstoneFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ SLATE ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.Text">
+								<text>Slate</text>
+								<font>Medium</font>
+								<anchor>Middle</anchor>
+							</li>
+							
+							<!-- HEALTH -->
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default health: 390	Mod's default health: 390</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>slateHealthSetting</key>
+								<label>Slate health: {slateHealthSetting}</label>
+								<defaultValue>390</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>100</min>
+								<max>1200</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Text">
+									<text>Vanilla default flammability: 0%		Mod's default flammability: 0%</text>
+									<font>Tiny</font>
+									<anchor>Middle</anchor>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Slider"> <!--Can use any class from XmlExtensions.Setting-->
+								<key>slateFlammabilitySetting</key>
+								<label>Slate flammability: {slateFlammabilitySetting}%</label>
+								<defaultValue>0</defaultValue> <!--Can generally skip, but good to include again to avoid possible bugs-->
+								<min>0</min>
+								<max>100</max>
+								<decimals>0</decimals>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<!--************************************************************ RESET SETTINGS ************************************************************-->
+							
+							<li Class="XmlExtensions.Setting.GapLine"/>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+							
+							<li Class="XmlExtensions.Setting.SetColor">
+								<color>(255,255,0)</color>
+							</li>
+								<li Class="XmlExtensions.Setting.Text">
+									<text>Resets all settings in this mod.</text>
+									<font>Small</font>
+									<anchor>Middle</anchor>
+									<tooltip>Sorry for any restarting inconveniences!</tooltip>
+								</li>
+							<li Class="XmlExtensions.Setting.SetColor"/>
+							
+							<li Class="XmlExtensions.Setting.ResetSettings"/>
+							
+							<li Class="XmlExtensions.Setting.Gap">
+								<spacing>24</spacing>
+							</li>
+						</settings>
+					</li>
+				</tabs>
+			</li>
+		</settings>
+	</XmlExtensions.SettingsMenuDef>
+</Defs>
